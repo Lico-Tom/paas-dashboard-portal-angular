@@ -1,0 +1,14 @@
+<mat-table [dataSource]="kafkaDataSource">
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+    <mat-cell *matCellDef="let instance">{{ instance.name }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="bootstrapServers">
+    <mat-header-cell *matHeaderCellDef>BootstrapServers</mat-header-cell>
+    <mat-cell *matCellDef="let instance">{{ instance.bootstrapServers }}</mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="['name', 'bootstrapServers']"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: ['name', 'bootstrapServers']"></mat-row>
+</mat-table>
